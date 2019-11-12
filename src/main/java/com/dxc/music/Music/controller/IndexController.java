@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dxc.music.Music.model.Album;
+import com.dxc.music.Music.model.Artists;
 import com.dxc.music.Music.model.Tracks;
 import com.dxc.music.Music.repo.MusicDal;
 
@@ -39,9 +40,40 @@ public class IndexController {
 			return null;
 	}
 	
+	@DeleteMapping(path = { "/artists/{id}" })
+	public Artists deleted(@PathVariable("id") String id) {
+		System.out.println("id " + id);
+		Artists deletedMus = musicDal.finddById(id);
+		System.out.println(deletedMus);
+		if(musicDal.deleteArtists(deletedMus))
+			return deletedMus;
+		else
+			return null;
+	}
+	
+	@DeleteMapping(path = { "/tracks/{id}" })
+	public Tracks deletedd(@PathVariable("id") String id) {
+		System.out.println("id " + id);
+		Tracks deletedMus = musicDal.findddById(id);
+		System.out.println(deletedMus);
+		if(musicDal.deleteTracks(deletedMus))
+			return deletedMus;
+		else
+			return null;
+	}
+	
+	
+	
 	@PostMapping("/albums")
 	public Album create(@RequestBody Album user) {
 		musicDal.create(user);
+		System.out.println(user + " insert");
+		return user;
+	}
+	
+	@PostMapping("/artists")
+	public Artists createArtists(@RequestBody Artists user) {
+		musicDal.createArtists(user);
 		System.out.println(user + " insert");
 		return user;
 	}
@@ -52,5 +84,7 @@ public class IndexController {
 		System.out.println(user + " insert");
 		return user;
 	}
+	
+	
 	
 }

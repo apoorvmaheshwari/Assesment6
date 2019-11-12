@@ -69,5 +69,18 @@ public class MusicDalimpl  implements MusicDal {
 		return mongo.findAndRemove(new Query(Criteria.where("id").is(id)), Album.class);
 	}
 	
+	@Override
+	public Artists finddById(String id) {
+		// TODO Auto-generated method stub
+		return mongo.findAndRemove(new Query(Criteria.where("id").is(id)), Artists.class);
+	}
+	
+	@Override
+	public Tracks findddById(String id) {
+		// TODO Auto-generated method stub
+		return mongo.findAndRemove(new Query(Criteria.where("id").is(id)), Tracks.class);
+	}
+
+
 
 }

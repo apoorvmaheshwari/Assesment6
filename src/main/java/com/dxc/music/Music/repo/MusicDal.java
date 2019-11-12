@@ -24,4 +24,8 @@ public interface MusicDal {
 
 	Album findById(String id);
 
+	Artists finddById(String id);
+
+	Tracks findddById(String id);
+
 }
