@@ -17,6 +17,8 @@ public interface MusicDal {
 	Tracks createTracks(Tracks tracks);
 
 	List<Album> findAll();
+	
+	
 
 	Boolean deleteArtists(Artists album);
 
@@ -27,5 +29,9 @@ public interface MusicDal {
 	Artists finddById(String id);
 
 	Tracks findddById(String id);
+
+	List<Tracks> findAllTracks();
+
+	List<Artists> findAllArtists();
 
 }

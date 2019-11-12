@@ -46,6 +46,18 @@ public class MusicDalimpl  implements MusicDal {
 	}
 	
 	@Override
+	public List<Tracks> findAllTracks() {
+		// TODO Auto-generated method stub
+		return mongo.findAll(Tracks.class);
+	}
+	
+	@Override
+	public List<Artists> findAllArtists() {
+		// TODO Auto-generated method stub
+		return mongo.findAll(Artists.class);
+	}
+	
+	@Override
 	public Boolean deleteAlbum(Album album) {
 		// TODO Auto-generated method stub
 		return mongo.remove(album).wasAcknowledged();
