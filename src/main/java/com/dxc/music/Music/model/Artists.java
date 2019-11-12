@@ -10,11 +10,15 @@ public class Artists {
 	private int id;
 	private String artistName;
 	List<Album>artistAlbums;
-	public Artists(int id, String artistName, List<Album> artistAlbums) {
+	List<Tracks>trackArtists;
+	
+	
+	public Artists(int id, String artistName, List<Album> artistAlbums, List<Tracks> trackArtists) {
 		super();
 		this.id = id;
 		this.artistName = artistName;
 		this.artistAlbums = artistAlbums;
+		this.trackArtists = trackArtists;
 	}
 	public int getId() {
 		return id;
@@ -33,6 +37,12 @@ public class Artists {
 	}
 	public void setArtistAlbums(List<Album> artistAlbums) {
 		this.artistAlbums = artistAlbums;
+	}
+	public List<Tracks> getTrackArtists() {
+		return trackArtists;
+	}
+	public void setTrackArtists(List<Tracks> trackArtists) {
+		this.trackArtists = trackArtists;
 	}
 	
 
