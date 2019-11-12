@@ -3,12 +3,15 @@ package com.dxc.music.Music.model;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class Album {
 	@Id
 	private int id;
 	private String albumName;
+	@DBRef
 	List<Artists>albumArtist;
+	@DBRef
 	List<Tracks>albumTracks;
 	public Album(int id, String albumName, List<Artists> albumArtist, List<Tracks> albumTracks) {
 		super();

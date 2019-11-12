@@ -3,13 +3,17 @@ package com.dxc.music.Music.model;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class Artists {
 	
 	@Id
 	private int id;
 	private String artistName;
+	@DBRef
 	List<Album>artistAlbums;
+	
+	@DBRef
 	List<Tracks>trackArtists;
 	
 	
